@@ -6,12 +6,19 @@ let userR = document.querySelector("#flexRadioDefault1");
 let userP = document.querySelector("#flexRadioDefault2");
 let userS = document.querySelector("#flexRadioDefault3");
 let gameButn = document.querySelector("#startButton");
+let saveButn = document.querySelector("#saveScore");
+let savedWins = document.querySelector("#winsSaved");
+let savedLosses = document.querySelector("#lossesSaved");
+let savedTies = document.querySelector("#tiesSaved");
 let compR = "";
 let compP = "";
 let compS = "";
 let winN = 0;
 let lossN = 0;
 let tieN = 0;
+
+//call loadLocalScore function
+loadLocalScore();
 
 //add event listener for button
 gameButn.addEventListener("click", function() {
@@ -119,6 +126,44 @@ function playGame() {
     userS = document.querySelector("#flexRadioDefault3");
 }
  
+//add event listener for save score button
+saveButn.addEventListener("click", function() {
+    saveLocalScore();
+    return;
+})
+
+//create saveLocalScore function
+function saveLocalScore() {
+    //create object to store score
+    let score = {
+        wins: winN,
+        losses: lossN,
+        ties: tieN,
+    }
+    //save score to local storage
+    localStorage.setItem("score", JSON.stringify(score));
+}
+
+//create loadLocalScore function
+function loadLocalScore() {
+    //get score from local storage
+    let score = JSON.parse(localStorage.getItem("score"));
+    //if score is not null, set savedWins, savedLosses, and savedTies to score.wins, score.losses, and score.ties
+    if (score !== null) {
+        savedWins.textContent = score.wins;
+        savedLosses.textContent = score.losses;
+        savedTies.textContent = score.ties;
+    }
+    else {
+        return;
+    }
+}
+
+
+
+
+
+
 
 
 
