@@ -57,46 +57,55 @@ function playGame() {
     if (userR === true && compR === true) {
         tieN++;
         tieNumber.textContent = tieN;
+        alert("Computer choce Rock, you tied!")
     }
     //if userR is true and compP is true, add 1 to lossNumber
     else if (userR === true && compP === true) {
         lossN++;
         lossNumber.textContent = lossN;
+        alert("Computer choce Paper, you lost!");
     }
     //if userR is true and compS is true, add 1 to winNumber
     else if (userR === true && compS === true) {
         winN++;
         winNumber.textContent = winN;
+        alert("Computer choce Scissors, you won!");
     }
     //if userP is true and compR is true, add 1 to winNumber
     if (userP === true && compR === true) {
         winN++;
         winNumber.textContent = winN;
+        alert("Computer choce Rock, you won!");
     }
     //if userP is true and compP is true, add 1 to tieNumber
     else if (userP === true && compP === true) {
         tieN++;
         tieNumber.textContent = tieN;
+        alert("Computer choce Paper, you tied!");
     }
     //if userP is true and compS is true, add 1 to lossNumber
     else if (userP === true && compS === true) {
         lossN++;
         lossNumber.textContent = lossN;
+        alert("Computer choce Scissors, you lost!");
     }
     //if userS is true and compR is true, add 1 to lossNumber
     if (userS === true && compR === true) {
         lossN++;
         lossNumber.textContent = lossN;
+        alert("Computer choce Rock, you lost!");
     }
     //if userS is true and compP is true, add 1 to winNumber
     else if (userS === true && compP === true) {
         winN++;
         winNumber.textContent = winN;
+        alert("Computer choce Paper, you won!")
     }
     //if userS is true and compS is true, add 1 to tieNumber
     else if (userS === true && compS === true) {
         tieN++;
         tieNumber.textContent = tieN;
+        alert("Computer choce Scissors, you tied!");
     }
    
 
