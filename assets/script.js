@@ -17,6 +17,7 @@ let winN = 0;
 let lossN = 0;
 let tieN = 0;
 
+
 //call loadLocalScore function
 loadLocalScore();
 
@@ -181,6 +182,7 @@ const brickOffsetTop = 30; //distance from top of canvas to bricks
 const brickOffsetLeft = 30; //distance from left of canvas to bricks
 let game2Score = 0; //score for game 2
 let lives = 3; //number of lives
+let game2Btn = document.querySelector("#startGame2"); //start game 2 button
 
 //brick array
 const bricks = [];
@@ -334,6 +336,12 @@ function drawLives() {
     ctx.fillStyle = "#0095DD";
     ctx.fillText(`Lives: ${lives}`, canvas.width - 65, 20); //draws text to display lives & coordinates
 }
-draw();
+
+// event listener for button press
+game2Btn.addEventListener("click", function() {
+    draw();
+})
+
+
 
 
